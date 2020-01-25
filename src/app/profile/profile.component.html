@@ -2,37 +2,39 @@
  
     <div class="profile">
       <div class="profile__img">
-        <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1537638518/Ba%C5%9Fl%C4%B1ks%C4%B1z-1.jpg" alt="profile card">
+        <img [src]="profile.avatar_url" alt="profile card">
       </div>
   
       <div class="profile__cnt">
-        <div class="profile__name">Muhammed Erdem</div>
-        <div class="profile__txt">Front-end Developer from <strong>Mesopotamia</strong></div>
+        <div class="profile__name">{{ profile.name }}</div>
+        <div class="profile__txt">
+            <i class="pi pi-user"></i><strong>{{ profile.login }}</strong>
+        </div>
         <div class="profile-loc"> 
           <span class="profile-loc__txt">
-            Istanbul, Turkey
+            {{ profile.location }}
           </span>
         </div>
   
         <div class="profile-inf">
           <div class="profile-inf__item">
-            <div class="profile-inf__title">1598</div>
+          <div class="profile-inf__title">{{ profile.public_repos }}</div>
+            <div class="profile-inf__txt">Public Repos</div>
+          </div>
+  
+          <div class="profile-inf__item">
+            <div class="profile-inf__title">{{ profile.public_gists }}</div>
+            <div class="profile-inf__txt">Public Gist</div>
+          </div>
+
+          <div class="profile-inf__item">
+            <div class="profile-inf__title">{{ profile.followers }}</div>
             <div class="profile-inf__txt">Followers</div>
           </div>
   
           <div class="profile-inf__item">
-            <div class="profile-inf__title">65</div>
+            <div class="profile-inf__title">{{ profile.following }}</div>
             <div class="profile-inf__txt">Following</div>
-          </div>
-  
-          <div class="profile-inf__item">
-            <div class="profile-inf__title">123</div>
-            <div class="profile-inf__txt">Articles</div>
-          </div>
-  
-          <div class="profile-inf__item">
-            <div class="profile-inf__title">85</div>
-            <div class="profile-inf__txt">Works</div>
           </div>
         </div>
       </div>  
