@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper container">
  
     <div class="profile">
       <div class="profile__img">
@@ -8,10 +8,17 @@
       <div class="profile__cnt">
         <div class="profile__name">{{ profile.name }}</div>
         <div class="profile__txt">
-            <i class="pi pi-user"></i><strong>{{ profile.login }}</strong>
+            <i class="pi pi-user"></i>
+            <strong>
+              <i class="material-icons md-15">account_circle</i>
+              {{ profile.login }}
+            </strong>
         </div>
         <div class="profile-loc"> 
           <span class="profile-loc__txt">
+            <i class="material-icons">
+              where_to_vote
+            </i>
             {{ profile.location }}
           </span>
         </div>

@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  topFollowing = 'Top Following';
-  topFollower = 'Top Followers';
+  user1 = 'fabpot';
+  user2 = 'andrew';
 }
