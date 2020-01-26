@@ -10,6 +10,9 @@ import { SingleProfileComponent } from './single-profile/single-profile.componen
 import { ReposComponent } from './repos/repos.component';
 import { SingleRepoComponent } from './single-repo/single-repo.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { GithubService } from './service/github.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,8 +25,9 @@ import { SingleRepoComponent } from './single-repo/single-repo.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [GithubService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
