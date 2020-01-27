@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Profile } from 'interfaces/profile';
+import { Component, OnInit, Input } from '@angular/core';
+import { Repo } from 'interfaces/repo';
 
 @Component({
   selector: 'app-single-repo',
@@ -8,7 +8,8 @@ import { Profile } from 'interfaces/profile';
 })
 export class SingleRepoComponent implements OnInit {
 
-  user: Profile;
+  @Input()
+  repo: Repo;
 
   constructor() { }
 

@@ -2,6 +2,7 @@
     <div class="profile">
         <h2 class="heading">Top Repositories</h2>
         <!-- {{ followings }} -->
-        <app-single-repo></app-single-repo>
+        <button (click)="sortBy('stargazers_count')">sort</button>
+        <app-single-repo *ngFor="let repo of sortedRepo" [repo]="repo"></app-single-repo>
     </div>
 </div>

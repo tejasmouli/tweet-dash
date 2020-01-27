@@ -2,16 +2,16 @@
  
     <div class="profile">
       <div class="profile__img">
-        <img [src]="profile.avatar_url" alt="profile card">
+        <img src={{profile?.avatar_url}} alt="profile card">
       </div>
   
       <div class="profile__cnt">
-        <div class="profile__name">{{ profile.name }}</div>
+        <div class="profile__name">{{ profile?.name }}</div>
         <div class="profile__txt">
             <i class="pi pi-user"></i>
             <strong>
               <i class="material-icons md-15">account_circle</i>
-              {{ profile.login }}
+              {{ profile?.login }}
             </strong>
         </div>
         <div class="profile-loc"> 
@@ -19,14 +19,14 @@
             <i class="material-icons">
               where_to_vote
             </i>
-            {{ profile.location ? profile.location : 'Missing Location' }}
+            {{ profile?.location ? profile.location : 'Missing Location' }}
           </span>
         </div>
   
         <div class="profile-inf">
           <div class="profile-inf__item">
           <div class="profile-inf__title">
-            {{ profile.public_repos }}
+            {{ profile?.public_repos }}
             <i class="material-icons">
               menu_book
             </i>
@@ -36,7 +36,7 @@
   
           <div class="profile-inf__item">
             <div class="profile-inf__title">
-              {{ profile.public_gists }}
+              {{ profile?.public_gists }}
               <i class="material-icons rot">
                 unfold_more
               </i>
@@ -46,7 +46,7 @@
 
           <div class="profile-inf__item">
             <div class="profile-inf__title">
-              {{ profile.followers }}
+              {{ profile?.followers }}
               <i class="material-icons">
                 people
               </i>
@@ -56,7 +56,7 @@
   
           <div class="profile-inf__item">
             <div class="profile-inf__title">
-              {{ profile.following }}
+              {{ profile?.following }}
               <i class="material-icons">
                 how_to_reg
               </i>

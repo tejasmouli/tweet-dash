@@ -12,6 +12,7 @@ import { SingleRepoComponent } from './single-repo/single-repo.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { GithubService } from './service/github.service';
+import { SizePipe } from './size.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { GithubService } from './service/github.service';
     FollowComponent,
     SingleProfileComponent,
     ReposComponent,
-    SingleRepoComponent
+    SingleRepoComponent,
+    SizePipe
   ],
   imports: [
     BrowserModule,

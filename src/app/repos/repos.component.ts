@@ -11,7 +11,7 @@ import { Repo } from 'interfaces/repo';
 })
 export class ReposComponent implements OnInit {
 
-  allRepos: Repo[];
+  sortedRepo: Repo[];
 
   constructor(private route: ActivatedRoute, private service: GithubService) { }
 
@@ -19,8 +19,12 @@ export class ReposComponent implements OnInit {
     this.route.queryParamMap.subscribe((params) => {
       console.log('From repos ' + params.get('user'));
       this.service.getUserRepos(params.get('user') ? params.get('user') : 'octocat')
-        .subscribe( res => {this.allRepos = res; console.log(res); }, err => alert);
+        .subscribe( res => {this.sortedRepo = res; console.log(res); }, err => alert);
     });
+  }
+
+  sortBy(att: string) {
+    this.sortedRepo = [...this.sortedRepo].sort((a, b) => a[att] < b[att] ? 1 : -1);
   }
 
 }

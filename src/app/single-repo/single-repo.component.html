@@ -1,26 +1,27 @@
 <div class="shd">
-    <h2>Repo Name</h2>
+    <h2>{{ repo.name }}</h2>
     <br />
-    The unofficial GitHub Cards. Card for your GitHub profile, card for your GitHub repositories. - lepture/github-cards.
+    {{ repo.description }}
     <br />
     <br />
     <div class="row">
-        <div class="col-md-4 col-sm-6 text">
+        <div class="col-md-4 col-6 text">
             <div class="bold">
-                56<i class="material-icons">publish</i>
+                {{ repo.size | size: 0 : 'KB' }}<i class="material-icons">folder_open</i>
             </div>
-            <div>Commits</div>
+            <div>Size</div>
         </div>
-        <div class="col-md-4 col-sm-6 text">
+        <div class="col-md-4 col-6 text">
             <div class="bold">
-                56
+                {{ repo.forks_count }}
                 <i class="material-icons">device_hub</i>
             </div>
             <div>Forks</div>
         </div>
-        <div class="col-md-4 col-sm-12 text">
+        <div class="col-md-4 col-12 text">
             <div class="bold">
-                56<i class="material-icons">star</i>
+                {{ repo.stargazers_count }}
+                <i class="material-icons">star</i>
             </div>
             <div>Stars</div>
         </div>
