@@ -107,3 +107,7 @@ html {
     font-weight: 500;
     margin-top: 7px;
 }
+
+.rot {
+    transform: rotate(90deg);
+}

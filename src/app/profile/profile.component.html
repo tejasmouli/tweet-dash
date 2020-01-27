@@ -25,22 +25,42 @@
   
         <div class="profile-inf">
           <div class="profile-inf__item">
-          <div class="profile-inf__title">{{ profile.public_repos }}</div>
+          <div class="profile-inf__title">
+            {{ profile.public_repos }}
+            <i class="material-icons">
+              menu_book
+            </i>
+          </div>
             <div class="profile-inf__txt">Public Repos</div>
           </div>
   
           <div class="profile-inf__item">
-            <div class="profile-inf__title">{{ profile.public_gists }}</div>
+            <div class="profile-inf__title">
+              {{ profile.public_gists }}
+              <i class="material-icons rot">
+                unfold_more
+              </i>
+            </div>
             <div class="profile-inf__txt">Public Gist</div>
           </div>
 
           <div class="profile-inf__item">
-            <div class="profile-inf__title">{{ profile.followers }}</div>
+            <div class="profile-inf__title">
+              {{ profile.followers }}
+              <i class="material-icons">
+                people
+              </i>
+            </div>
             <div class="profile-inf__txt">Followers</div>
           </div>
   
           <div class="profile-inf__item">
-            <div class="profile-inf__title">{{ profile.following }}</div>
+            <div class="profile-inf__title">
+              {{ profile.following }}
+              <i class="material-icons">
+                how_to_reg
+              </i>
+            </div>
             <div class="profile-inf__txt">Following</div>
           </div>
         </div>
