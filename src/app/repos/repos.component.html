@@ -1,8 +1,19 @@
 <div class="wrapper">
     <div class="profile">
         <h2 class="heading">Top Repositories</h2>
-        <!-- {{ followings }} -->
-        <button (click)="sortBy('stargazers_count')">sort</button>
+        <div class="d-flex justify-content-center">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                <input (click)="sortBy('stargazers_count')" type="radio" name="options" autocomplete="off" checked> Stars
+                </label>
+                <label class="btn btn-secondary">
+                <input (click)="sortBy('size')" type="radio" name="options" autocomplete="off"> Size
+                </label>
+                <label class="btn btn-secondary">
+                <input (click)="sortBy('forks_count')" type="radio" name="options" autocomplete="off"> Forks
+                </label>
+            </div>
+        </div>
         <app-single-repo *ngFor="let repo of sortedRepo" [repo]="repo"></app-single-repo>
     </div>
 </div>

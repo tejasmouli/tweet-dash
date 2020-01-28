@@ -19,9 +19,8 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParamMap.subscribe((params) => {
-      console.log('From profile ' + params.get('user'));
       this.service.getUser(params.get('user') ? params.get('user') : 'octocat')
-        .subscribe( res => {this.profile = res; console.log(res); }, err => alert);
+        .subscribe( res => this.profile = res, alert);
     });
   }
 

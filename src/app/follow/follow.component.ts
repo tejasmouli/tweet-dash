@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { GithubService } from '../service/github.service';
+import { Profile } from 'interfaces/profile';
 
 @Component({
   selector: 'app-follow',
@@ -8,12 +10,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FollowComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  following: string[];
+  users: Profile[];
+
+  constructor(private route: ActivatedRoute, private service: GithubService) { }
 
   ngOnInit() {
     this.route.queryParamMap.subscribe((params) => {
-      console.log('From following ' + params.get('user'));
+      this.service.getUserFollowing(params.get('user') ? params.get('user') : 'octocat')
+        .subscribe( res => { this.following = res.map(x => x.login); }, alert);
     });
   }
-
 }

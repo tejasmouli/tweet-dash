@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Profile } from 'interfaces/profile';
 import { Repo } from 'interfaces/repo';
 
@@ -23,6 +23,12 @@ export class GithubService {
 
     getUserRepos(username: string): Observable<Repo[]> {
         return this.http.get<Repo[]>(this.URL + username + '/repos');
+    }
+
+    getfullUser(login: string): Profile {
+        let user: Profile;
+        this.getUser(login).subscribe(res => user = res, alert);
+        return user;
     }
 
 }

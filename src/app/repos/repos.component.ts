@@ -17,9 +17,8 @@ export class ReposComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParamMap.subscribe((params) => {
-      console.log('From repos ' + params.get('user'));
       this.service.getUserRepos(params.get('user') ? params.get('user') : 'octocat')
-        .subscribe( res => {this.sortedRepo = res; console.log(res); }, err => alert);
+        .subscribe(res => this.sortedRepo = res, alert);
     });
   }
 

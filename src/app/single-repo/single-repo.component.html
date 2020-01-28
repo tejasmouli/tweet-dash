@@ -1,7 +1,7 @@
 <div class="shd">
-    <h2>{{ repo.name }}</h2>
+    <h3>{{ repo.name }}</h3>
     <br />
-    {{ repo.description }}
+    {{ repo.description ? repo.description : 'No Description' }}
     <br />
     <br />
     <div class="row">

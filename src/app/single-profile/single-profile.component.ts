@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Profile } from 'interfaces/profile';
+import { GithubService } from '../service/github.service';
 
 @Component({
   selector: 'app-single-profile',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleProfileComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  login: string;
+
+  user: Profile;
+
+  constructor(private service: GithubService) { }
 
   ngOnInit() {
+    this.service.getUser(this.login).subscribe(res => this.user = res, alert);
   }
 
 }
