@@ -59,8 +59,3 @@ function toDecimal(value: number, decimal: number): number {
   return Math.round(value * Math.pow(10, decimal)) / Math.pow(10, decimal);
 }
 
-@NgModule({
-  declarations: [SizePipe],
-  exports: [SizePipe],
-})
-export class NgBytesPipeModule {}
